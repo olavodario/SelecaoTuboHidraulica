@@ -26,6 +26,20 @@
         </header>
 
         <section class="calculator-card">
+            <div class="converter-section">
+                <div class="converter-header">
+                    <h3>Conversor Rápido (TR para m³/h)</h3>
+                    <p>Fator: 2.4 GPM/TR (~0.545 m³/h)</p>
+                </div>
+                <div class="input-group converter-group">
+                    <div class="input-wrapper">
+                        <input type="number" id="trInput" placeholder="TR" step="1" min="0">
+                        <span class="unit-badge">TR</span>
+                    </div>
+                    <button id="convertBtn" class="convert-btn">Calcular &rarr;</button>
+                </div>
+            </div>
+
             <div class="input-group">
                 <label for="flowRate" class="input-label">Vazão de Água (m³/h)</label>
                 <div class="input-wrapper">
@@ -81,6 +95,7 @@
 
         <footer>
             <p>Baseado na tabela NBR 6401/1980 - Parâmetros máximos para seleção</p>
+            <p class="disclaimer"><em>* Os cálculos do software são para fins estipulativos.</em></p>
             <div class="system-explanation"
                 style="margin-top: 1rem; font-size: 0.8rem; max-width: 600px; margin-inline: auto; opacity: 0.8;">
                 <p><strong>Sistema Fechado:</strong> Sem contato com a atmosfera (ex: Água Gelada). Permite maiores

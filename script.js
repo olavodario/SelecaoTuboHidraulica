@@ -24,9 +24,40 @@ const velocityEl = document.getElementById('velocity');
 const lossEl = document.getElementById('loss');
 const warningEl = document.getElementById('warningMessage');
 
+// Converter Elements
+const trInput = document.getElementById('trInput');
+const convertBtn = document.getElementById('convertBtn');
+
 // Event Listeners
 flowInput.addEventListener('input', calculate);
 systemRadios.forEach(radio => radio.addEventListener('change', calculate));
+
+// Converter Logic
+convertBtn.addEventListener('click', convertTrToFlow);
+trInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        convertTrToFlow();
+    }
+});
+
+function convertTrToFlow() {
+    const trValue = parseFloat(trInput.value);
+
+    if (isNaN(trValue) || trValue < 0) {
+        // Optional: Add visual feedback for invalid input
+        return;
+    }
+
+    // Factor: 2.4 GPM/TR * 0.227125 (GPM to m3/h) = ~0.5451
+    // Using simple factor 0.545 as per plan
+    const flow = trValue * 0.545;
+
+    // Update Main Input
+    flowInput.value = flow.toFixed(2);
+
+    // Trigger Calculation
+    calculate();
+}
 
 function calculate() {
     const flowRate = parseFloat(flowInput.value);
