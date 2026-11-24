@@ -4,108 +4,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seleção Tubo Hidráulica - Calculadora NBR 6401</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>HidroFlow — Seleção de Tubo Hidráulico (ABNT NBR 16401-1:2024)</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/logo-hidraulica.png" type="image/png">
+    <link rel="icon" href="img/logo-hidroflow.svg" type="image/svg+xml">
 </head>
 
 <body>
-    <div class="background-globes">
-        <div class="globe globe-1"></div>
-        <div class="globe globe-2"></div>
-        <div class="globe globe-3"></div>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="brand">
+                <img class="brand-logo" src="img/logo-hidroflow.svg" alt="" width="46" height="46">
+                <div>
+                    <div class="brand-title">
+                        <h1 class="wordmark"><span class="wm-hidro">HIDRO</span><span class="wm-flow">FLOW</span></h1>
+                        <span class="badge">NBR 16401-1:2024</span>
+                    </div>
+                    <p class="brand-subtitle">Seleção de Tubo Hidráulico · Água Gelada e Condensação (HVAC)</p>
+                </div>
+            </div>
+            <div class="topbar-actions">
+                <button id="exampleBtn" class="btn btn-ghost" type="button">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
+                    </svg>
+                    Exemplo (20 TR)
+                </button>
+                <button id="clearBtn" class="btn btn-ghost" type="button">Limpar</button>
+            </div>
+        </div>
+    </header>
+
+    <div id="quickResult" class="quick-result" aria-live="polite">
+        <div class="qr-left">
+            <span class="qr-label">Bitola</span>
+            <span class="qr-pipe"><span id="qrPipe">--</span> <span id="qrMm" class="qr-mm"></span></span>
+        </div>
+        <div class="qr-right">
+            <span id="qrVel" class="qr-vel mono">Digite a capacidade</span>
+            <span id="qrSub" class="qr-sub mono">ou a vazão de água</span>
+        </div>
     </div>
 
-    <main class="container">
-        <header class="app-header">
-            <h1>Seleção Tubo Hidráulica</h1>
-            <p>Calculadora de Dimensionamento de Tubulação (NBR 6401/1980)</p>
-        </header>
-
-        <section class="calculator-card">
-            <div class="converter-section">
-                <div class="converter-header">
-                    <h3>Conversor Rápido (TR para m³/h)</h3>
-                    <p>Fator: 2.4 GPM/TR (~0.545 m³/h)</p>
+    <main class="layout">
+        <div class="column-left">
+            <!-- Conversor -->
+            <section class="card">
+                <div class="card-head">
+                    <div>
+                        <h3 class="card-title-accent">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="m17 2 4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 0 1-3 3H3" />
+                            </svg>
+                            Conversor Rápido (Capacidade → Vazão)
+                        </h3>
+                        <p class="card-sub">Capacidade térmica para vazão de água</p>
+                    </div>
+                    <div class="field-mini">
+                        <label for="capacityUnit" class="mini-label">Unidade</label>
+                        <select id="capacityUnit" class="select select-sm mono">
+                            <option value="TR" selected>TR</option>
+                            <option value="BTU">BTU/h</option>
+                            <option value="KW">kW</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="input-group converter-group">
+
+                <div class="converter-row">
                     <div class="input-wrapper">
-                        <input type="number" id="trInput" placeholder="TR" step="1" min="0">
-                        <span class="unit-badge">TR</span>
+                        <input type="number" id="capacityInput" class="input mono" placeholder="Ex: 15" step="any"
+                            min="0" inputmode="decimal" enterkeyhint="done">
+                        <span id="capacityBadge" class="unit-badge mono">TR</span>
                     </div>
-                    <button id="convertBtn" class="convert-btn">Calcular &rarr;</button>
+                    <button id="convertBtn" class="btn btn-primary" type="button">
+                        Aplicar Vazão
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
-            </div>
+                <p id="convertInfo" class="hint mono">Fator: 2,40 GPM/TR (~0,545 m³/h) · ΔT ≈ 5,6 °C</p>
+            </section>
 
-            <div class="input-group">
-                <label for="flowRate" class="input-label">Vazão de Água (m³/h)</label>
-                <div class="input-wrapper">
-                    <input type="number" id="flowRate" placeholder="Ex: 5.0" step="0.1" min="0">
-                    <span class="unit-badge">m³/h</span>
+            <!-- Parâmetros -->
+            <section class="card">
+                <div class="section-head">
+                    <h2><span class="dot"></span>Parâmetros do Projeto</h2>
+                    <span class="muted-sm">Cálculo em tempo real</span>
                 </div>
-            </div>
 
-            <div class="system-toggle">
-                <span class="toggle-label">Tipo de Sistema:</span>
-                <div class="toggle-container">
-                    <input type="radio" name="systemType" id="closed" value="closed" checked>
-                    <label for="closed" class="toggle-btn">Fechado</label>
-
-                    <input type="radio" name="systemType" id="open" value="open">
-                    <label for="open" class="toggle-btn">Aberto</label>
-                </div>
-            </div>
-
-            <div id="resultContainer" class="result-container hidden">
-                <div class="result-header">
-                    <h2>Bitola Recomendada</h2>
-                    <div class="result-main">
-                        <span id="diameterMm" class="diameter-mm">--</span>
-                        <span class="unit">mm</span>
-                        <span class="separator">/</span>
-                        <span id="diameterIn" class="diameter-in">--</span>
-                        <span class="unit">pol</span>
+                <div class="field">
+                    <label for="flowRate" class="field-label">Vazão de Água</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="flowRate" class="input input-lg mono" placeholder="Ex: 5.0" step="0.1"
+                            min="0" inputmode="decimal" enterkeyhint="done">
+                        <span class="unit-badge mono">m³/h</span>
                     </div>
+                    <p id="flowHint" class="hint mono">Insira uma vazão ou use o conversor acima</p>
+                </div>
+
+                <div class="field">
+                    <div class="field-label-row">
+                        <span class="field-label">Tipo de Trecho</span>
+                        <span class="tag mono">Tabela 3</span>
+                    </div>
+                    <div class="segmented" role="radiogroup" aria-label="Tipo de trecho">
+                        <input type="radio" name="pipeSection" id="secGeral" value="geral" checked>
+                        <label for="secGeral" class="seg-btn">
+                            <span class="seg-title">Geral</span>
+                            <span class="seg-sub mono">Tabela 4 · 3,0 m/s</span>
+                        </label>
+                        <input type="radio" name="pipeSection" id="secRecalque" value="recalque">
+                        <label for="secRecalque" class="seg-btn">
+                            <span class="seg-title">Recalque</span>
+                            <span class="seg-sub mono">auto · 3,0 m/s</span>
+                        </label>
+                        <input type="radio" name="pipeSection" id="secSuccao" value="succao">
+                        <label for="secSuccao" class="seg-btn">
+                            <span class="seg-title">Sucção</span>
+                            <span class="seg-sub mono">auto · 2,1 m/s</span>
+                        </label>
+                    </div>
+                    <p id="sectionHint" class="hint mono"></p>
+                </div>
+
+                <div class="field">
+                    <div class="field-label-row">
+                        <span class="field-label">Regime de Operação</span>
+                        <span class="tag mono">Tabela 4</span>
+                    </div>
+                    <div class="regime-row">
+                        <select id="hoursPerDay" class="select select-lg mono" aria-label="Horas de operação por dia">
+                            <option value="1">1 h/dia</option>
+                            <option value="2">2 h/dia</option>
+                            <option value="3">3 h/dia</option>
+                            <option value="4">4 h/dia</option>
+                            <option value="5">5 h/dia</option>
+                            <option value="6">6 h/dia</option>
+                            <option value="7">7 h/dia</option>
+                            <option value="8">8 h/dia</option>
+                            <option value="9">9 h/dia</option>
+                            <option value="10">10 h/dia</option>
+                            <option value="11">11 h/dia</option>
+                            <option value="12">12 h/dia</option>
+                            <option value="13">13 h/dia</option>
+                            <option value="14">14 h/dia</option>
+                            <option value="15">15 h/dia</option>
+                            <option value="16">16 h/dia</option>
+                            <option value="17">17 h/dia</option>
+                            <option value="18">18 h/dia</option>
+                            <option value="19">19 h/dia</option>
+                            <option value="20">20 h/dia</option>
+                            <option value="21">21 h/dia</option>
+                            <option value="22">22 h/dia</option>
+                            <option value="23">23 h/dia</option>
+                            <option value="24" selected>24 h/dia</option>
+                        </select>
+                        <span class="regime-x">×</span>
+                        <select id="daysPerWeek" class="select select-lg mono" aria-label="Dias de operação por semana">
+                            <option value="1">1 dia/sem</option>
+                            <option value="2">2 dias/sem</option>
+                            <option value="3">3 dias/sem</option>
+                            <option value="4">4 dias/sem</option>
+                            <option value="5">5 dias/sem</option>
+                            <option value="6">6 dias/sem</option>
+                            <option value="7" selected>7 dias/sem</option>
+                        </select>
+                    </div>
+                    <p id="regimeHint" class="hint mono"></p>
+                </div>
+
+                <div class="field">
+                    <div class="field-label-row">
+                        <label for="maxVelocity" class="field-label">Velocidade Máxima de Seleção</label>
+                        <span id="velocitySource" class="tag mono">Tabela 4</span>
+                    </div>
+                    <div class="converter-row">
+                        <div class="input-wrapper">
+                            <input type="number" id="maxVelocity" class="input mono" value="3.0" step="0.1" min="0.1"
+                                inputmode="decimal" disabled>
+                            <span class="unit-badge mono">m/s</span>
+                        </div>
+                        <button id="editVelocityBtn" class="btn btn-ghost" type="button">Editar</button>
+                    </div>
+                    <div id="velocityWarning" class="alert alert-warn hidden">
+                        <strong>Atenção:</strong> alterar a velocidade máxima interfere diretamente na seleção do tubo.
+                        O valor padrão vem do tipo de trecho e do regime de operação (ABNT NBR 16401-1:2024,
+                        Tabelas 3 e 4). Recalque e sucção: máximo da faixa da Tabela 3 limitado pela erosão da Tabela 4.
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Resultado -->
+        <section id="resultPanel" class="result-panel is-empty">
+            <div id="emptyState" class="empty-state">
+                <img class="empty-logo" src="img/logo-hidroflow.svg" alt="" width="96" height="96">
+                <h2>Aguardando Vazão de Projeto</h2>
+                <p>Digite a vazão de água no painel ao lado ou utilize o <span class="link">Conversor Rápido</span>
+                    para calcular o diâmetro comercial segundo a <strong>NBR 16401-1:2024</strong>.</p>
+                <button id="simulateBtn" class="btn btn-outline" type="button">Simular com 10,9 m³/h (20 TR)</button>
+            </div>
+
+            <div id="resultContainer" class="result hidden">
+                <span class="result-kicker">Bitola Recomendada</span>
+                <div class="result-main">
+                    <span id="diameterIn" class="result-big">--</span>
+                    <span class="result-sep">/</span>
+                    <span><span id="diameterMm" class="result-mid">--</span> <span class="unit">mm</span></span>
                 </div>
 
                 <div class="result-details">
                     <div class="detail-item">
-                        <span class="detail-label">Velocidade Máx.</span>
-                        <span id="velocity" class="detail-value">--</span>
-                        <span class="detail-unit">m/s</span>
+                        <span class="detail-label">Velocidade Real</span>
+                        <span><span id="velocity" class="detail-value mono">--</span> <span
+                                class="detail-unit">m/s</span></span>
                     </div>
                     <div class="detail-item">
-                        <span class="detail-label">Perda Carga</span>
-                        <span id="loss" class="detail-value">--</span>
-                        <span class="detail-unit">%</span>
+                        <span class="detail-label">Vazão Máx. do Tubo</span>
+                        <span><span id="pipeMaxFlow" class="detail-value mono">--</span> <span
+                                class="detail-unit">m³/h</span></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Velocidade Adotada</span>
+                        <span><span id="adoptedVelocity" class="detail-value mono">--</span> <span
+                                class="detail-unit">m/s</span></span>
                     </div>
                 </div>
-                <div id="warningMessage" class="warning-message hidden">
-                    Vazão excede os limites da tabela (Maior que 6").
-                </div>
-            </div>
 
-            <div id="emptyState" class="empty-state">
-                <p>Insira a vazão para calcular</p>
+                <div id="warningMessage" class="alert alert-danger hidden"></div>
             </div>
         </section>
-
-        <footer>
-            <p>Baseado na tabela NBR 6401/1980 - Parâmetros máximos para seleção</p>
-            <p class="disclaimer"><em>* Os cálculos do software são para fins estipulativos.</em></p>
-            <div class="system-explanation"
-                style="margin-top: 1rem; font-size: 0.8rem; max-width: 600px; margin-inline: auto; opacity: 0.8;">
-                <p><strong>Sistema Fechado:</strong> Sem contato com a atmosfera (ex: Água Gelada). Permite maiores
-                    velocidades.</p>
-                <p><strong>Sistema Aberto:</strong> Com contato com a atmosfera (ex: Torres). Requer menores velocidades
-                    para evitar corrosão.</p>
-            </div>
-        </footer>
     </main>
 
+    <footer class="footer">
+        <p>Baseado na ABNT NBR 16401-1:2024, item 12 — Instalações de água gelada, água quente e água de condensação.
+        </p>
+        <p>Seleção pelo menor diâmetro comercial cuja velocidade não ultrapassa a máxima adotada (Tabela 4: velocidade
+            máxima pelas horas de operação por ano — padrão 24/7 = 3,0 m/s; Tabela 3: faixa econômica geral de 1,5 a
+            3,5 m/s).</p>
+        <p class="disclaimer">* Os cálculos do software são para fins estipulativos. O dimensionamento final deve ser
+            revisado pelo projetista (NBR 16401-1:2024, 12.2.11).</p>
+    </footer>
+
+    <script src="engine.js"></script>
     <script src="script.js"></script>
 </body>
 

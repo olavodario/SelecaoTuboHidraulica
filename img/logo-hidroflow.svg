@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="hf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6fd3ea"/>
+      <stop offset="1" stop-color="#2fa6c6"/>
+    </linearGradient>
+  </defs>
+  <!-- gota -->
+  <path d="M19 4.5C19 4.5 9 16.5 9 24a10 10 0 0 0 20 0C29 16.5 19 4.5 19 4.5Z" stroke="url(#hf)" stroke-width="4.2" stroke-linejoin="round"/>
+  <path d="M14.6 23.5a5 5 0 0 0 3.4 5" stroke="url(#hf)" stroke-width="2.6" stroke-linecap="round"/>
+  <!-- tubo sob a gota (gancho para a esquerda, com flange) -->
+  <path d="M25 35.5V47a8 8 0 0 1-16 0v-2" stroke="url(#hf)" stroke-width="5" stroke-linecap="butt"/>
+  <rect x="5.6" y="40.4" width="10.8" height="4.2" rx="1.2" fill="url(#hf)"/>
+  <!-- tubo da direita (curva superior com flange + laço inferior) -->
+  <path d="M52 9.5h-4a9 9 0 0 0-9 9V45a10 10 0 1 0 10-10h-4" stroke="url(#hf)" stroke-width="5" stroke-linecap="butt"/>
+  <rect x="51.6" y="4" width="4.2" height="11" rx="1.2" fill="url(#hf)"/>
+  <rect x="40.4" y="31.4" width="4.2" height="7.2" rx="1.2" fill="url(#hf)"/>
+</svg>

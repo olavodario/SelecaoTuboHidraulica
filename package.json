@@ -1,0 +1,10 @@
+{
+  "name": "selecao-tubo-hidraulica",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Calculadora de seleção de tubo hidráulico (ABNT NBR 16401-1:2024)",
+  "scripts": {
+    "test": "node --test",
+    "test:estrito": "node -e \"process.env.PLANILHA_ESTRITA='1'; require('child_process').execSync('node --test', {stdio: 'inherit', env: process.env})\""
+  }
+}

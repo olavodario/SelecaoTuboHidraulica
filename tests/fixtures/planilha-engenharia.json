@@ -1,0 +1,1111 @@
+{
+  "fonte": "Tabela seleção tubo hidráulica.xlsx",
+  "observacao": "Tabela 13 - NBR 6401/1980, Sistema Fechado (coluna D). A planilha registra o 6\" como 50 mm (célula B17), o correto é 150 mm.",
+  "velocidade_motor_m_s": 3.0,
+  "tabela": [
+    {
+      "linha_excel": 8,
+      "mm": 19,
+      "pol": "3/4\"",
+      "fechado": {
+        "vazao": 1.5,
+        "velocidade": 1.2,
+        "perda": 10
+      },
+      "aberto": {
+        "vazao": 1,
+        "velocidade": 0.8,
+        "perda": 10
+      }
+    },
+    {
+      "linha_excel": 9,
+      "mm": 25,
+      "pol": "1\"",
+      "fechado": {
+        "vazao": 3,
+        "velocidade": 1.5,
+        "perda": 10
+      },
+      "aberto": {
+        "vazao": 2.2,
+        "velocidade": 1.1,
+        "perda": 10
+      }
+    },
+    {
+      "linha_excel": 10,
+      "mm": 32,
+      "pol": "1.1/4\"",
+      "fechado": {
+        "vazao": 6,
+        "velocidade": 1.7,
+        "perda": 10
+      },
+      "aberto": {
+        "vazao": 4,
+        "velocidade": 1.2,
+        "perda": 10
+      }
+    },
+    {
+      "linha_excel": 11,
+      "mm": 38,
+      "pol": "1.1/2\"",
+      "fechado": {
+        "vazao": 9,
+        "velocidade": 1.9,
+        "perda": 10
+      },
+      "aberto": {
+        "vazao": 6,
+        "velocidade": 1.3,
+        "perda": 10
+      }
+    },
+    {
+      "linha_excel": 12,
+      "mm": 50,
+      "pol": "2\"",
+      "fechado": {
+        "vazao": 17,
+        "velocidade": 2.2,
+        "perda": 10
+      },
+      "aberto": {
+        "vazao": 12,
+        "velocidade": 1.6,
+        "perda": 10
+      }
+    },
+    {
+      "linha_excel": 13,
+      "mm": 65,
+      "pol": "2.1/2\"",
+      "fechado": {
+        "vazao": 28,
+        "velocidade": 2.5,
+        "perda": 10
+      },
+      "aberto": {
+        "vazao": 23,
+        "velocidade": 2.1,
+        "perda": 10
+      }
+    },
+    {
+      "linha_excel": 14,
+      "mm": 75,
+      "pol": "3\"",
+      "fechado": {
+        "vazao": 48,
+        "velocidade": 2.8,
+        "perda": 10
+      },
+      "aberto": {
+        "vazao": 36,
+        "velocidade": 2.1,
+        "perda": 10
+      }
+    },
+    {
+      "linha_excel": 15,
+      "mm": 100,
+      "pol": "4\"",
+      "fechado": {
+        "vazao": 90,
+        "velocidade": 3.1,
+        "perda": 9
+      },
+      "aberto": {
+        "vazao": 75,
+        "velocidade": 2.5,
+        "perda": 10
+      }
+    },
+    {
+      "linha_excel": 16,
+      "mm": 125,
+      "pol": "5\"",
+      "fechado": {
+        "vazao": 143,
+        "velocidade": 3.1,
+        "perda": 7
+      },
+      "aberto": {
+        "vazao": 136,
+        "velocidade": 2.9,
+        "perda": 10
+      }
+    },
+    {
+      "linha_excel": 17,
+      "mm": 50,
+      "pol": "6\"",
+      "fechado": {
+        "vazao": 215,
+        "velocidade": 3.2,
+        "perda": 5.5
+      },
+      "aberto": {
+        "vazao": 204,
+        "velocidade": 3.1,
+        "perda": 9
+      }
+    }
+  ],
+  "casos": [
+    {
+      "vazao_m3h": 0.1,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "3/4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3/4\"",
+        "mm": 19,
+        "velocidade": 0.098
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 0.5,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "3/4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3/4\"",
+        "mm": 19,
+        "velocidade": 0.4899
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 0.75,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "3/4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3/4\"",
+        "mm": 19,
+        "velocidade": 0.7348
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 1.0,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "3/4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3/4\"",
+        "mm": 19,
+        "velocidade": 0.9797
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 1.5,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "3/4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3/4\"",
+        "mm": 19,
+        "velocidade": 1.4696
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 1.51,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3/4\"",
+        "mm": 19,
+        "velocidade": 1.4794
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 2.25,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3/4\"",
+        "mm": 19,
+        "velocidade": 2.2044
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 2.73,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3/4\"",
+        "mm": 19,
+        "velocidade": 2.6746
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 3,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3/4\"",
+        "mm": 19,
+        "velocidade": 2.9391
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 3.01,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1.1/4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3/4\"",
+        "mm": 19,
+        "velocidade": 2.9489
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 3.06,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1.1/4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3/4\"",
+        "mm": 19,
+        "velocidade": 2.9979
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 3.07,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1.1/4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "1\"",
+        "mm": 25,
+        "velocidade": 1.7373
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 4.5,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1.1/4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "1\"",
+        "mm": 25,
+        "velocidade": 2.5465
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 5.3,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1.1/4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "1\"",
+        "mm": 25,
+        "velocidade": 2.9992
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 5.31,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1.1/4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "1.1/4\"",
+        "mm": 32,
+        "velocidade": 1.834
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 5.45,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1.1/4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "1.1/4\"",
+        "mm": 32,
+        "velocidade": 1.8824
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 6,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1.1/4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "1.1/4\"",
+        "mm": 32,
+        "velocidade": 2.0723
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 6.01,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1.1/2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "1.1/4\"",
+        "mm": 32,
+        "velocidade": 2.0758
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 7.5,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1.1/2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "1.1/4\"",
+        "mm": 32,
+        "velocidade": 2.5904
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 8.68,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1.1/2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "1.1/4\"",
+        "mm": 32,
+        "velocidade": 2.998
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 8.69,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1.1/2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "1.1/2\"",
+        "mm": 38,
+        "velocidade": 2.1284
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 9,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "1.1/2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "1.1/2\"",
+        "mm": 38,
+        "velocidade": 2.2044
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 9.01,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "1.1/2\"",
+        "mm": 38,
+        "velocidade": 2.2068
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 10.9,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "1.1/2\"",
+        "mm": 38,
+        "velocidade": 2.6697
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 12.24,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "1.1/2\"",
+        "mm": 38,
+        "velocidade": 2.9979
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 12.25,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "2\"",
+        "mm": 50,
+        "velocidade": 1.733
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 13.0,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "2\"",
+        "mm": 50,
+        "velocidade": 1.8391
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 16.35,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "2\"",
+        "mm": 50,
+        "velocidade": 2.3131
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 17,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "2\"",
+        "mm": 50,
+        "velocidade": 2.405
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 17.01,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "2.1/2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "2\"",
+        "mm": 50,
+        "velocidade": 2.4064
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 21.2,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "2.1/2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "2\"",
+        "mm": 50,
+        "velocidade": 2.9992
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 21.21,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "2.1/2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "2.1/2\"",
+        "mm": 65,
+        "velocidade": 1.7755
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 21.8,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "2.1/2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "2.1/2\"",
+        "mm": 65,
+        "velocidade": 1.8249
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 22.5,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "2.1/2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "2.1/2\"",
+        "mm": 65,
+        "velocidade": 1.8835
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 28,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "2.1/2\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "2.1/2\"",
+        "mm": 65,
+        "velocidade": 2.3439
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 28.01,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "3\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "2.1/2\"",
+        "mm": 65,
+        "velocidade": 2.3447
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 32.71,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "3\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "2.1/2\"",
+        "mm": 65,
+        "velocidade": 2.7382
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 35.83,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "3\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "2.1/2\"",
+        "mm": 65,
+        "velocidade": 2.9994
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 35.84,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "3\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3\"",
+        "mm": 75,
+        "velocidade": 2.2535
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 38.0,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "3\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3\"",
+        "mm": 75,
+        "velocidade": 2.3893
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 43.61,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "3\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3\"",
+        "mm": 75,
+        "velocidade": 2.742
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 47.71,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "3\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "3\"",
+        "mm": 75,
+        "velocidade": 2.9998
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 47.72,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "3\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "4\"",
+        "mm": 100,
+        "velocidade": 1.6877
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 48,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "3\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "4\"",
+        "mm": 100,
+        "velocidade": 1.6977
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 48.01,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "4\"",
+        "mm": 100,
+        "velocidade": 1.698
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 54.51,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "4\"",
+        "mm": 100,
+        "velocidade": 1.9279
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 69.0,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "4\"",
+        "mm": 100,
+        "velocidade": 2.4404
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 81.76,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "4\"",
+        "mm": 100,
+        "velocidade": 2.8917
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 84.82,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "4\"",
+        "mm": 100,
+        "velocidade": 2.9999
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 84.83,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "5\"",
+        "mm": 125,
+        "velocidade": 1.9202
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 90,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "4\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "5\"",
+        "mm": 125,
+        "velocidade": 2.0372
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 90.01,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "5\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "5\"",
+        "mm": 125,
+        "velocidade": 2.0374
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 109.02,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "5\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "5\"",
+        "mm": 125,
+        "velocidade": 2.4677
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 116.5,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "5\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "5\"",
+        "mm": 125,
+        "velocidade": 2.637
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 132.53,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "5\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "5\"",
+        "mm": 125,
+        "velocidade": 2.9999
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 132.54,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "5\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "6\"",
+        "mm": 150,
+        "velocidade": 2.0834
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 143,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "5\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "6\"",
+        "mm": 150,
+        "velocidade": 2.2478
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 143.01,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "6\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "6\"",
+        "mm": 150,
+        "velocidade": 2.248
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 163.53,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "6\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "6\"",
+        "mm": 150,
+        "velocidade": 2.5705
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 179.0,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "6\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "6\"",
+        "mm": 150,
+        "velocidade": 2.8137
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 190.85,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "6\""
+      },
+      "esperado_motor": {
+        "status": "ok",
+        "pol": "6\"",
+        "mm": 150,
+        "velocidade": 3.0
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 190.86,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "6\""
+      },
+      "esperado_motor": {
+        "status": "exceeds",
+        "pol": null,
+        "mm": null,
+        "velocidade": null
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 215,
+      "esperado_planilha": {
+        "status": "ok",
+        "pol": "6\""
+      },
+      "esperado_motor": {
+        "status": "exceeds",
+        "pol": null,
+        "mm": null,
+        "velocidade": null
+      },
+      "diverge": true
+    },
+    {
+      "vazao_m3h": 215.01,
+      "esperado_planilha": {
+        "status": "exceeds",
+        "pol": null
+      },
+      "esperado_motor": {
+        "status": "exceeds",
+        "pol": null,
+        "mm": null,
+        "velocidade": null
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 250.0,
+      "esperado_planilha": {
+        "status": "exceeds",
+        "pol": null
+      },
+      "esperado_motor": {
+        "status": "exceeds",
+        "pol": null,
+        "mm": null,
+        "velocidade": null
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 500.0,
+      "esperado_planilha": {
+        "status": "exceeds",
+        "pol": null
+      },
+      "esperado_motor": {
+        "status": "exceeds",
+        "pol": null,
+        "mm": null,
+        "velocidade": null
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": 0,
+      "esperado_planilha": {
+        "status": "invalid",
+        "pol": null
+      },
+      "esperado_motor": {
+        "status": "invalid",
+        "pol": null,
+        "mm": null,
+        "velocidade": null
+      },
+      "diverge": false
+    },
+    {
+      "vazao_m3h": -1,
+      "esperado_planilha": {
+        "status": "invalid",
+        "pol": null
+      },
+      "esperado_motor": {
+        "status": "invalid",
+        "pol": null,
+        "mm": null,
+        "velocidade": null
+      },
+      "diverge": false
+    }
+  ]
+}
